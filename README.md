@@ -25,3 +25,7 @@ choose a person ID and you can modify his name, age or add or delete some food
 
 DELETE: http://localhost:3000/delete/:_id
 to delete one person from the collection, check his ID and enter it instead in the URL
+
+
+GET: http://localhost:3000/addmany
+there is any array of people already created, once we put this url in postman, it will add all the people in one time

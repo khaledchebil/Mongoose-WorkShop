@@ -51,6 +51,35 @@ router.put('/update/:_id', async (req, res)=>{
         })
 
 
+        router.post("/addmany", async (req,res)=>{
+          let arrayOfPeople = 
+             [ {
+                name: "Med Salah",
+                age: 25,
+                favoriteFoods:['Pasta','Sushi','Asian food']
+              },
+              {
+                name: "Saber",
+                age: 30,
+                favoriteFoods:['Tunisien Food','Chinise food']
+              },
+              {
+                name: "Anis",
+                age: 40,
+                favoriteFoods:['Food','Water']
+              }
+          ]
+         
+  
+          const createManyPeople = await (Person.create(arrayOfPeople))
+          try {
+             res.send(createManyPeople)
+          } catch (error) {
+              console.log("updated person info  failes", error)
+          }
+        
+        });
+          
 
 
 module.exports = router;
